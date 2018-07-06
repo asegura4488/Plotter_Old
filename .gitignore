@@ -1,0 +1,12 @@
+*~
+*/*~
+#*#
+*.out
+files/*
+*root
+Plotter
+obj/*.o
+log.txt
+PUStudy
+.dummyinfo
+*.pyc
