@@ -1030,7 +1030,7 @@ string Plotter::newLabel(string stringkey) {
     return "#DeltaR("+ listParticles(m[1].str()) + ")";
   }
   else if(regex_match(stringkey, m, MetMt)) {
-    return "M_{T}(" + turnLatex(m[2].str()+m[4].str()) + ") [GeV]";
+    return "m_{T}(" + turnLatex(m[2].str()+m[4].str()) + "," + "E_{T}^{miss}" + ") [GeV]";
   }
   else if(regex_match(stringkey, m, eta))  {
     particle += (m[2].str() != "") ? "#Delta" : "";
