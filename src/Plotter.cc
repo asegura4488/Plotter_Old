@@ -787,7 +787,7 @@ void Plotter::setYAxisBot(TAxis* yaxis, TH1* data_mc, double ratio) {
   yaxis->SetLabelSize(yaxis->GetLabelSize()*ratio);
   yaxis->SetTitleSize(ratio*yaxis->GetTitleSize());
   yaxis->SetTitleOffset(yaxis->GetTitleOffset()/ratio);
-  yaxis->SetTitle("#frac{Data}{BackGround}");
+  yaxis->SetTitle("#frac{Data}{Background}");
 }
 
 //// if plot is a significance plot, finds the maximum and 
