@@ -787,7 +787,7 @@ void Plotter::setYAxisBot(TAxis* yaxis, TH1* data_mc, double ratio) {
   yaxis->SetLabelSize(yaxis->GetLabelSize()*ratio);
   yaxis->SetTitleSize(ratio*yaxis->GetTitleSize());
   yaxis->SetTitleOffset(yaxis->GetTitleOffset()/ratio);
-  yaxis->SetTitle("#frac{Data}{MC}");
+  yaxis->SetTitle("#frac{Data}{BackGround}");
 }
 
 //// if plot is a significance plot, finds the maximum and 
@@ -1009,7 +1009,7 @@ string Plotter::newLabel(string stringkey) {
   regex pt ("^(.+?)(Delta)?(Pt)(Div)?.*$");
   regex osls ("^(.+?)OSLS");
   regex zdecay ("^[^_]_(.+)IsZdecay$");
-
+  regex Dphi1 ("^(([^_]*?)|[^_]+_(.+?))(Delta)?(Dphi1)");
 
   if(regex_match(stringkey, m, e)) {
     return "E(" + turnLatex(m[1].str()) + ") [GeV]";
@@ -1032,6 +1032,9 @@ string Plotter::newLabel(string stringkey) {
   else if(regex_match(stringkey, m, MetMt)) {
     return "m_{T}(" + turnLatex(m[2].str()+m[4].str()) + "," + "E_{T}^{miss}" + ") [GeV]";
   }
+  else if(regex_match(stringkey, m, Dphi1)) {
+    return "#Delta #phi(j_{lead}, E_{T}^{miss})";	   
+  }
   else if(regex_match(stringkey, m, eta))  {
     particle += (m[2].str() != "") ? "#Delta" : "";
     particle += "#eta(" + listParticles(m[1].str()) + ")";
@@ -1052,7 +1055,7 @@ string Plotter::newLabel(string stringkey) {
     particle += listParticles(m[1].str()) + ") [GeV]";
     return particle;
   } 
-  else if(stringkey.find("Met") != string::npos) return "#slash{E}_{T} [GeV]";
+  else if(stringkey.find("Met") != string::npos) return "E_{T}^{miss} [GeV]";
   else if(stringkey.find("MHT") != string::npos) return "#slash{H}_{T} [GeV]";
   else if(stringkey.find("HT") != string::npos) return "H_{T} [GeV]";
   else if(stringkey.find("Meff") != string::npos) return "M_{eff} [GeV]";
