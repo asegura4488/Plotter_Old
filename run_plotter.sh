@@ -16,9 +16,12 @@ echo ---------------- Running Plotter ------ ---------------------
 #./Plotter config/SR_minusQCD.config 
 #./Plotter config/rebin.config 
 #./Plotter config/QCD_1.config 
-./Plotter config/ttbar.config 
+#./Plotter config/ttbar.config 
 #./Plotter config/QCD.config 
 #./Plotter config/QCD_dataD.config 
 #./Plotter config/DY.config
 #./Plotter config/Zmumu.config
+
+################Nano code ##############################
+./Plotter config/Nano_ttbar.config
 
