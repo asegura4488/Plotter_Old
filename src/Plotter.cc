@@ -368,7 +368,7 @@ void Plotter::CreateStack( TDirectory *target, Logfile& logfile) {
       datahist->Draw("same");
 
        TPaveText *pt = new TPaveText(0.80,0.941,0.95,1.0,"NBNDC");
-           pt->AddText("35.9 fb^{-1} (13 TeV)");
+           pt->AddText("41.3 fb^{-1} (13 TeV)");
 	       pt->SetTextFont(42);
 	           pt->SetTextAlign(32);
 		       pt->SetFillStyle(0);

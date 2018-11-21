@@ -24,4 +24,5 @@ echo ---------------- Running Plotter ------ ---------------------
 
 ################Nano code ##############################
 ./Plotter config/Nano_ttbar.config
+#./Plotter config/Nano_isr_weights.config
 
