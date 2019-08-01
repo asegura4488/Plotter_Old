@@ -23,6 +23,7 @@ echo ---------------- Running Plotter ------ ---------------------
 #./Plotter config/Zmumu.config
 
 ################Nano code ##############################
-./Plotter config/Nano_ttbar.config
+#./Plotter config/Nano_ttbar.config
+./Plotter config/Pheno.config
 #./Plotter config/Nano_isr_weights.config
 
